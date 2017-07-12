@@ -1,4 +1,10 @@
 #!/bin/sh
+
+if [ -z $1 ]; then
+    echo "Please specify the location of your Python 3 header files, E.G: /usr/include/python3.5"
+    exit 1
+fi
+
 Kernel=$(uname -s)
 case "$Kernel" in
     Linux)  Kernel="linux"              ;;
@@ -38,4 +44,4 @@ cp -f NeticaEx.o Netica_API_504_Linux/lib/NeticaEx.o
 #compiling cython to c
 cython -a NeticaPy.pyx
 #compiling C to .so file
-gcc -shared -pthread -fPIC -fwrapv -O2 -Wall -fno-strict-aliasing -I/usr/include/python3.5 Netica_API_504_Linux/lib/NeticaEx.o  NeticaPy.c -o NeticaPy.so  -INetica_API_504_Linux/src -LNetica_API_504_Linux/lib -lrt -lnetica -lpthread -lstdc++ -lm
+gcc -shared -pthread -fPIC -fwrapv -O2 -Wall -fno-strict-aliasing -I$1 Netica_API_504_Linux/lib/NeticaEx.o  NeticaPy.c -o NeticaPy.so  -INetica_API_504_Linux/src -LNetica_API_504_Linux/lib -lrt -lnetica -lpthread -lstdc++ -lm
