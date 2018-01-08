@@ -3,6 +3,6 @@ NeticaPy3 is a Python 3 wrapper for Netica (Netica is a norsys baysian inference
 
 This is a fork of NeticaPy to support Python 3: https://github.com/ValueFromData/NeticaPy
 
-Currently only Linux is supported.
+Mac is currently not supported.
 
-Minimal required Python version is 3.3.
+Minimal required Python version is 3.5.
