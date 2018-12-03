@@ -1682,16 +1682,16 @@ cdef class Netica:
         return res
 
     def ReorderNodesets_bn (self,NewNet net, char* nodeset_order, vis=None):
-        ReorderNodesets_bn (net.value, nodeset_order, NULL if type(vis)==None else <void*> vis)
+        ReorderNodesets_bn (net.value, nodeset_order, NULL if vis==None else <void*> vis)
 
     def GetAllNodesets_bn (self,NewNet net, bool_ns include_system, vis=None):
         cdef char* res
-        res = GetAllNodesets_bn (net.value, include_system, NULL if type(vis)==None else <void*> vis)
+        res = GetAllNodesets_bn (net.value, include_system, NULL if vis==None else <void*> vis)
         return res
 
     def SetNodesetColor_bn (self,char* nodeset, color_ns color, NewNet net, vis=None):
         cdef color_ns res
-        res = SetNodesetColor_bn (nodeset, color, net.value,NULL if type(vis)==None else <void*> vis)
+        res = SetNodesetColor_bn (nodeset, color, net.value,NULL if vis==None else <void*> vis)
         return res
 
     def ReverseLink_bn (self,NewNode parent, NewNode child):
@@ -1751,22 +1751,22 @@ cdef class Netica:
 
     def GetNetTitle_bn (self, NewNet net):
         cdef char* res
-        res.value = GetNetTitle_bn (net.value)
+        res = GetNetTitle_bn (net.value)
         return res
 
     def GetNetComment_bn (self, NewNet net):
         cdef char* res
-        res.value = GetNetComment_bn (net.value)
+        res = GetNetComment_bn (net.value)
         return res
 
     def GetNetFileName_bn (self, NewNet net):
         cdef char* res
-        res.value = GetNetFileName_bn (net.value)
+        res = GetNetFileName_bn (net.value)
         return res
 
     def GetNodeName_bn (self,NewNode node):
         cdef char* res
-        res.value = GetNodeName_bn ( node.value)
+        res = GetNodeName_bn ( node.value)
         return res
 
     def GetNodeType_bn (self,NewNode node):
@@ -1886,10 +1886,10 @@ cdef class Netica:
 
 
     def SetNodeVisPosition_bn (self,NewNode node, vis=None, double x=0, double y=0):
-        SetNodeVisPosition_bn (node.value, NULL if type(vis)==None else <void*> vis, x, y)
+        SetNodeVisPosition_bn (node.value, NULL if vis==None else <void*> vis, x, y)
 
     def SetNodeVisStyle_bn (self,NewNode node, vis=None, char* style=""):
-        SetNodeVisStyle_bn (node.value, NULL if type(vis)==None else <void*> vis, style)
+        SetNodeVisStyle_bn (node.value, NULL if vis==None else <void*> vis, style)
 
 
     def GetNetUserField_bn (self,NewNet net, char* name, int length=0, int kind=0):
@@ -1927,11 +1927,11 @@ cdef class Netica:
         return  None if res==NULL else <object> res
 
     def GetNodeVisPosition_bn (self,NewNode node, vis=None, double x=0.0, double y=0.0):
-        GetNodeVisPosition_bn (node.value, NULL if type(vis)==None else <void*> vis, &x, &y)
+        GetNodeVisPosition_bn (node.value, NULL if vis==None else <void*> vis, &x, &y)
 
     def GetNodeVisStyle_bn (self,NewNode node, vis=None):
         cdef char* res
-        res = GetNodeVisStyle_bn (node.value, NULL if type(vis)==None else <void*> vis)
+        res = GetNodeVisStyle_bn (node.value, NULL if vis==None else <void*> vis)
         return res
 
     def IsNodeRelated_bn (self,NewNode related_node,char* relation, NewNode node):
