@@ -6,3 +6,17 @@ This is a fork of NeticaPy to support Python 3: https://github.com/ValueFromData
 Mac is currently not supported.
 
 Minimal required Python version is 3.5.
+
+
+## Installation
+Example installation in linux/conda environment
+```
+$ conda create -y -n netica python=3.10
+$ conda activate netica
+$ conda install cython
+$ git clone git@github.com:jataware/NeticaPy3.git
+$ cd NeticaPy3
+$ ./compile_linux.sh ~/anaconda3/envs/netica/include/python3.10/
+### path is to location of python library headers
+$ pip install -e .
+```
