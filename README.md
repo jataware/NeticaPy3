@@ -2,7 +2,7 @@
 
 NeticaPy3 is a Python 3 wrapper for Netica, a Bayesian inference engine developed by Norsys. It wraps the C API of the Netica inference engine, providing access to over 400 API calls in Python.
 
-This is a fork of NeticaPy to support Python 3: [NeticaPy3 Fork](https://github.com/ValueFromData/NeticaPy3)
+This is a fork of NeticaPy to support Python 3: [NeticaPy3 Fork](https://github.com/ValueFromData/NeticaPy)
 
 **Note:** Mac is currently not supported.
 
