@@ -17,9 +17,9 @@ This is a fork of NeticaPy to support Python 3: [NeticaPy3 Fork](https://github.
 
 1. Create and activate your environment:
     ```bash
-    conda create -y -n netica python=3.10
+    conda create -y -n netica python=3.9
     conda activate netica
-    conda install cython==0.29.37
+    conda install cython==0.29.21
     ```
 
 2. Get NeticaPy3:
@@ -33,27 +33,3 @@ This is a fork of NeticaPy to support Python 3: [NeticaPy3 Fork](https://github.
     ./compile_linux.sh ~/anaconda3/envs/netica/include/python3.10/
     pip install -e .
     ```
-
-### For venv Users
-
-1. Create your virtual environment:
-    ```bash
-    python3.10 -m venv netica_env
-    source netica_env/bin/activate  # Linux
-    .\netica_env\Scripts\activate   # Windows
-    pip install cython==0.29.37
-    ```
-
-2. Get NeticaPy3:
-    ```bash
-    git clone git@github.com:jataware/NeticaPy3.git
-    ```
-
-3. Compile and install NeticaPy3:
-    ```bash
-    cd NeticaPy3
-    ./compile_linux.sh path/to/netica_env/include/python3.10/  # Linux
-    compile_windows.bat path\to\netica_env\include\python3.10\  # Windows
-    pip install -e .
-    ```
-
