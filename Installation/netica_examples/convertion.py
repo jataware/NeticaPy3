@@ -1,4 +1,4 @@
-from NeticaPy import Netica
+from Modules.NeticaPy3.NeticaPy import Netica
 N=Netica()
 mesg=bytearray()
 env=N.NewNeticaEnviron_ns(b"",None,b"")

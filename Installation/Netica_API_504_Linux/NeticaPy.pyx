@@ -1,3 +1,4 @@
+from Cython.Debugger.libpython import xrange
 from libc.stdlib cimport malloc, free
 import types
 from cpython.object cimport PyObject
