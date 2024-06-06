@@ -278,7 +278,10 @@ class NeticaGraph:
             # Set probabilities without parent states
             logger.info("Setting probabilities without parent states")
             probs_c = FloatList(probs)
+            for i in range(1, 100):
+                print(i)
             N.SetNodeProbs_bn(node, IntList([]), probs_c)
+
         else:
             if len(parent_states) != num_parents:
                 raise ValueError("Number of parent states provided does not match the number of parents of the node.")
